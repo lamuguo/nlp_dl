@@ -3,6 +3,10 @@ Deep Learning NLP Pipeline implemented on Tensorflow. Following the 'simplicity'
 use the deep learning library of Tensorflow to implement new NLP pipeline. You can extend the project to 
 train models with your own corpus/languages. Pretrained models of Chinese corpus are distributed.
 
+**New**
+Merge from "https://github.com/julian121266/RecurrentHighwayNetworks"
+Merge from "https://github.com/harvardnlp/seq2seq-attn"
+
 Brief Introduction
 ==================
 * [Modules](#modules)
