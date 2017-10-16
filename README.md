@@ -213,8 +213,10 @@ Textsum
 See details: [README](https://github.com/tangzhenyu/nlp_dl/tree/master/nlp_dl/textsum)
 
 
-TextCNN (WIP)
+TextCNN
 ---------------
+See details: [README](https://github.com/tangzhenyu/nlp_dl/tree/master/nlp_dl/textcnn)
+
 Train your model
 --------------------
 ###Segment model
