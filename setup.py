@@ -30,7 +30,6 @@ setup(
             'textsum/README.md',
         ],
         'test': [
-            'docs_api.txt',
             'docs_test.txt',
         ],
     },
