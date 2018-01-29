@@ -1,4 +1,7 @@
 # -*- coding=utf-8 -*-
+
+#Implmentation of anmm model based on bin sum input of QA matrix
+
 from __future__ import print_function
 from __future__ import absolute_import
 import keras
@@ -9,25 +12,25 @@ from keras.activations import softmax
 from model import BasicModel
 from utils.utility import *
 
-class DRMM(BasicModel):
+class ANMM(BasicModel):
     def __init__(self, config):
-        super(DRMM, self).__init__(config)
-        self._name = 'DRMM'
-        self.check_list = [ 'text1_maxlen', 'hist_size',
+        super(ANMM, self).__init__(config)
+        self._name = 'ANMM'
+        self.check_list = [ 'text1_maxlen', 'bin_num',
                 'embed', 'embed_size', 'vocab_size',
                 'num_layers', 'hidden_sizes']
         self.setup(config)
         self.initializer_fc = keras.initializers.RandomUniform(minval=-0.1, maxval=0.1, seed=11)
         self.initializer_gate = keras.initializers.RandomUniform(minval=-0.01, maxval=0.01, seed=11)
         if not self.check():
-            raise TypeError('[DRMM] parameter check wrong')
-        print('[DRMM] init done', end='\n')
+            raise TypeError('[ANMM] parameter check wrong')
+        print('[ANMM] init done', end='\n')
 
     def setup(self, config):
         if not isinstance(config, dict):
             raise TypeError('parameter config should be dict:', config)
 
-        self.set_default('text1_maxlen', 5)
+        self.set_default('text1_maxlen', 10)
         self.set_default('hist_size', 60)
         self.set_default('dropout_rate', 0.)
         self.config.update(config)
@@ -41,7 +44,7 @@ class DRMM(BasicModel):
             return y
         query = Input(name='query', shape=(self.config['text1_maxlen'],))
         show_layer_info('Input', query)
-        doc = Input(name='doc', shape=(self.config['text1_maxlen'], self.config['hist_size']))
+        doc = Input(name='doc', shape=(self.config['text1_maxlen'], self.config['bin_num']))
         show_layer_info('Input', doc)
 
         embedding = Embedding(self.config['vocab_size'], self.config['embed_size'], weights=[self.config['embed']], trainable = False)

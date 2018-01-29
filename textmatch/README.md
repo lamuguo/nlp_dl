@@ -20,7 +20,7 @@ The tool could convert dataset of different text matching tasks into a unified f
 - [CDSSM](https://www.microsoft.com/en-us/research/publication/learning-semantic-representations-using-convolutional-neural-networks-for-web-search/)
 - [ARC-II](https://arxiv.org/abs/1503.03244)
 - [Match_SRNN](https://www.ijcai.org/Proceedings/16/Papers/415.pdf)
-
+- [Siamese_LSTM]() [Learning Text Similarity with Siamese Recurrent Networks](http://www.aclweb.org/anthology/W16-16#page=162),[Siamese Recurrent Architectures for Learning Sentence Similarity](Siamese Recurrent Architectures for Learning Sentence Similarity)
 ## Usage
 ```
 git clone https://github.com/tangzhenyu/nlp_dl/textmatch.git
